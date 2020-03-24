@@ -1,0 +1,10 @@
+c:\users\m17\documents\visual studio 2015\Projects\FinalWebApi\DataAccessLayer\bin\Debug\DataAccessLayer.dll.config
+c:\users\m17\documents\visual studio 2015\Projects\FinalWebApi\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+c:\users\m17\documents\visual studio 2015\Projects\FinalWebApi\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+c:\users\m17\documents\visual studio 2015\Projects\FinalWebApi\DataAccessLayer\bin\Debug\EntityFramework.dll
+c:\users\m17\documents\visual studio 2015\Projects\FinalWebApi\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\m17\documents\visual studio 2015\Projects\FinalWebApi\DataAccessLayer\bin\Debug\EntityFramework.xml
+c:\users\m17\documents\visual studio 2015\Projects\FinalWebApi\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\m17\documents\visual studio 2015\Projects\FinalWebApi\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
+c:\users\m17\documents\visual studio 2015\Projects\FinalWebApi\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+c:\users\m17\documents\visual studio 2015\Projects\FinalWebApi\DataAccessLayer\obj\Debug\DataAccessLayer.pdb

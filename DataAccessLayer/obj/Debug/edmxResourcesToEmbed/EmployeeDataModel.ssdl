@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EmployeeDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Emp">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+    </Key>
+    <Property Name="EmployeeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Age" Type="int" Nullable="false" />
+    <Property Name="Salary" Type="int" Nullable="false" />
+    <Property Name="Designation" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="employees">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="employee_id" Type="int" Nullable="false" />
+    <Property Name="first_name" Type="varchar" MaxLength="50" />
+    <Property Name="last_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="id" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Infosys.dbo.tbl_Users' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbl_Users">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="Access" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Infosys.dbo.tbl_UsersDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbl_UsersDetails">
+    <Key>
+      <PropertyRef Name="First_Name" />
+      <PropertyRef Name="Last_Name" />
+      <PropertyRef Name="Password" />
+      <PropertyRef Name="Email" />
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Mobile_number" />
+      <PropertyRef Name="Current_address" />
+      <PropertyRef Name="DOB" />
+    </Key>
+    <Property Name="First_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Last_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Mobile_number" Type="numeric" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="Current_address" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DOB" Type="date" Nullable="false" />
+    <Property Name="Gender" Type="varchar" MaxLength="10" />
+    <Property Name="Country" Type="varchar" MaxLength="10" />
+    <Property Name="Files" Type="varbinary(max)" />
+  </EntityType>
+  <Function Name="insertdata" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="emp_id" Type="int" Mode="In" />
+    <Parameter Name="first_name" Type="varchar" Mode="In" />
+    <Parameter Name="last_name" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="proc_registeration" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="First_Name" Type="nvarchar" Mode="In" />
+    <Parameter Name="Last_Name" Type="nvarchar" Mode="In" />
+    <Parameter Name="Password" Type="nvarchar" Mode="In" />
+    <Parameter Name="Email" Type="nvarchar" Mode="In" />
+    <Parameter Name="Mobile_number" Type="numeric" Mode="In" />
+    <Parameter Name="Current_address" Type="nvarchar" Mode="In" />
+    <Parameter Name="DOB" Type="date" Mode="In" />
+    <Parameter Name="Gender" Type="bit" Mode="In" />
+    <Parameter Name="Country" Type="int" Mode="In" />
+  </Function>
+  <Function Name="proc_registeration1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="First_Name" Type="nvarchar" Mode="In" />
+    <Parameter Name="Last_Name" Type="nvarchar" Mode="In" />
+    <Parameter Name="Password" Type="nvarchar" Mode="In" />
+    <Parameter Name="Email" Type="nvarchar" Mode="In" />
+    <Parameter Name="Mobile_number" Type="numeric" Mode="In" />
+    <Parameter Name="Current_address" Type="nvarchar" Mode="In" />
+    <Parameter Name="DOB" Type="date" Mode="In" />
+    <Parameter Name="Gender" Type="nvarchar" Mode="In" />
+    <Parameter Name="Country" Type="nvarchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="EmployeeDBModelStoreContainer">
+    <EntitySet Name="Emp" EntityType="Self.Emp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="employees" EntityType="Self.employees" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Users" EntityType="Self.tbl_Users" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbl_Users].[ID] AS [ID], 
+    [tbl_Users].[UserName] AS [UserName], 
+    [tbl_Users].[Password] AS [Password], 
+    [tbl_Users].[Access] AS [Access]
+    FROM [dbo].[tbl_Users] AS [tbl_Users]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tbl_UsersDetails" EntityType="Self.tbl_UsersDetails" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbl_UsersDetails].[First_Name] AS [First_Name], 
+    [tbl_UsersDetails].[Last_Name] AS [Last_Name], 
+    [tbl_UsersDetails].[Password] AS [Password], 
+    [tbl_UsersDetails].[Email] AS [Email], 
+    [tbl_UsersDetails].[Id] AS [Id], 
+    [tbl_UsersDetails].[Mobile_number] AS [Mobile_number], 
+    [tbl_UsersDetails].[Current_address] AS [Current_address], 
+    [tbl_UsersDetails].[DOB] AS [DOB], 
+    [tbl_UsersDetails].[Gender] AS [Gender], 
+    [tbl_UsersDetails].[Country] AS [Country], 
+    [tbl_UsersDetails].[Files] AS [Files]
+    FROM [dbo].[tbl_UsersDetails] AS [tbl_UsersDetails]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
